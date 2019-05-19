@@ -1,0 +1,31 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 500,
+    "max": 1000
+  },
+  "authentication": {
+    "secret": "f809e95b37605d82ed27c4251fc0320fbe43d7bc271c7903c7f96893f2f35d07f8930c2f1a332e837f082912715abeb320f7b57bc12d687a801c36cd8983b92434df2e7a772677450196fce26ec5d5e89e7ea56a6d28c5b35b76a933c1f4fc84da83be3fe3867f648430e9ad0ab3171e3c3fc521d589e02988fa6a7dc741323044c7a5097e6c98535270cdbebffa61a99d090ee19e100b5d4ccf4938eab7a0ff78378841c043f1f42e00d269e5863402ee5d64e0712c532b8eef88a9d2919287c34f009e0b67a1406fc40149c1d2f396000af37279eadbcda6ac6c0590c7732efebfa5993b0a79307ad1b459392cd33052e32703db5aa1bc3dcd90b21dd4fc87",
+    "strategies": ["jwt", "local"],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/trello_clone_server"
+}
